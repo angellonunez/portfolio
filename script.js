@@ -1,8 +1,12 @@
 const checkbox = document.getElementById('checkbox');
-const hero = document.getElementById('hero');
 
-checkbox.addEventListener('change', ()=>{
-  document.body.classList.toggle('dark');
-  hero.classList.toggle('dark');
-  
-})
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }    
+}
+
+checkbox.addEventListener('change', switchTheme, false);
